@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_23_224024) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_04_025226) do
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.boolean "active"
@@ -28,6 +28,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_23_224024) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hash_name"], name: "index_calibers_on_hash_name", unique: true
+  end
+
+  create_table "students", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "cpf", null: false
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "cep", null: false
+    t.string "state", null: false
+    t.string "city", null: false
+    t.string "number", null: false
+    t.string "address", null: false
+    t.date "date_of_birth", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cpf"], name: "index_students_on_cpf", unique: true
+    t.index ["email"], name: "index_students_on_email", unique: true
   end
 
   create_table "weapons", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
